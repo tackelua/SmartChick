@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="NanoFarm" Class="NanoFarmDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.69.69.27\SQL2016;Initial Catalog=NanoFarm;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="NanoFarmConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Action" Member="Actions">
+    <Type Name="Action">
+      <Column Name="HubID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Feed_Status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Active_Status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Active_Speed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Gate_Status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Clean_Status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Sterilise_Status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Light_Status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Hub_Information_Action" Member="Hub_Information" ThisKey="HubID" OtherKey="ID" Type="Hub_Information" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Action_Setting" Member="Action_Settings">
+    <Type Name="Action_Setting">
+      <Column Name="HubID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Feed_Moment" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Feed_Mode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Active_Moment" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Active_Speed" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Active_Time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Active_Mode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Open_Gate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Close_Gate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Gate_Mode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Clean_Moment" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Clean_Mode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Sterilise_Moment_Day" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Sterilise_Moment_Time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Sterilise_Mode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Light_Mode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Light_On_Time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Light_Off_Time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Hub_Information_Action_Setting" Member="Hub_Information" ThisKey="HubID" OtherKey="ID" Type="Hub_Information" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Chicken" Member="Chickens">
+    <Type Name="Chicken">
+      <Column Name="HubID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SpeciesID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Outside" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Inside" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DayOld" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Weight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BodyTemp" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="Hub_Information_Chicken" Member="Hub_Information" ThisKey="HubID" OtherKey="ID" Type="Hub_Information" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Chicken_Library" Member="Chicken_Libraries">
+    <Type Name="Chicken_Library">
+      <Column Name="TypeID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SpeciesID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Picture" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DayOld_Min" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DayOld_Max" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Temperature_Min" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Temperature_Max" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Humidity_Min" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Humidity_Max" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lighting_Duration" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Food_Amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Food_Eat_No" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Weight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="Chicken_Library_Inoculation_List" Member="Inoculation_Lists" ThisKey="TypeID" OtherKey="TypeID" Type="Inoculation_List" />
+      <Association Name="Chicken_List_Chicken_Library" Member="Chicken_List" ThisKey="SpeciesID" OtherKey="SpeciesID" Type="Chicken_List" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Chicken_List" Member="Chicken_Lists">
+    <Type Name="Chicken_List">
+      <Column Name="SpeciesID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Picture" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Chicken_List_Chicken_Library" Member="Chicken_Libraries" ThisKey="SpeciesID" OtherKey="SpeciesID" Type="Chicken_Library" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Condition" Member="Conditions">
+    <Type Name="Condition">
+      <Column Name="HubID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Temperature_Outside" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Temperature_Inside" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Temperature_Heater" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Humidity_Outside" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Humidity_Inside" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Humidity_MistingStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Light_Outside" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Light_Inside" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Light_Lamp_Status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Hub_Information_Condition" Member="Hub_Information" ThisKey="HubID" OtherKey="ID" Type="Hub_Information" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Current_Care" Member="Current_Cares">
+    <Type Name="Current_Care">
+      <Column Name="HubID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SpeciesID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Picture" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Temperature_Value" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Temperature_Min" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Temperature_Max" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Humidity_Value" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Humidity_Min" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Humidity_Max" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lighting_Duration" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Food_Amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Food_Eat_No" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Weight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="Hub_Information_Current_Care" Member="Hub_Information" ThisKey="HubID" OtherKey="ID" Type="Hub_Information" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Hub_Information" Member="Hub_Informations">
+    <Type Name="Hub_Information">
+      <Column Name="ID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Hub_Information_Action" Member="Action" ThisKey="ID" OtherKey="HubID" Type="Action" Cardinality="One" />
+      <Association Name="Hub_Information_Action_Setting" Member="Action_Setting" ThisKey="ID" OtherKey="HubID" Type="Action_Setting" Cardinality="One" />
+      <Association Name="Hub_Information_Chicken" Member="Chicken" ThisKey="ID" OtherKey="HubID" Type="Chicken" Cardinality="One" />
+      <Association Name="Hub_Information_Condition" Member="Condition" ThisKey="ID" OtherKey="HubID" Type="Condition" Cardinality="One" />
+      <Association Name="Hub_Information_Current_Care" Member="Current_Care" ThisKey="ID" OtherKey="HubID" Type="Current_Care" Cardinality="One" />
+      <Association Name="Hub_Information_Inoculation_List" Member="Inoculation_Lists" ThisKey="ID" OtherKey="HubId" Type="Inoculation_List" />
+      <Association Name="Hub_Information_Notification" Member="Notifications" ThisKey="ID" OtherKey="HubId" Type="Notification" />
+      <Association Name="Hub_Information_Log" Member="Logs" ThisKey="ID" OtherKey="HubID" Type="Log" />
+      <Association Name="User_Hub_Information" Member="User" ThisKey="Email" OtherKey="Email" Type="User" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Inoculation_List" Member="Inoculation_Lists">
+    <Type Name="Inoculation_List">
+      <Column Name="HubId" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DaysOld" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Medicine" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Method" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SpeciesID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TypeID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Chicken_Library_Inoculation_List" Member="Chicken_Library" ThisKey="TypeID" OtherKey="TypeID" Type="Chicken_Library" IsForeignKey="true" />
+      <Association Name="Hub_Information_Inoculation_List" Member="Hub_Information" ThisKey="HubId" OtherKey="ID" Type="Hub_Information" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Notification" Member="Notifications">
+    <Type Name="Notification">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Noti_Code" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Noti_Action" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Noti_Read" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HubId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Date_Time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Hub_Information_Notification" Member="Hub_Information" ThisKey="HubId" OtherKey="ID" Type="Hub_Information" IsForeignKey="true" />
+      <Association Name="Notification_Content_Notification" Member="Notification_Content" ThisKey="Noti_Code" OtherKey="Noti_Code" Type="Notification_Content" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Notification_Content" Member="Notification_Contents">
+    <Type Name="Notification_Content">
+      <Column Name="Noti_Code" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Noti_Content" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Notification_Content_Notification" Member="Notifications" ThisKey="Noti_Code" OtherKey="Noti_Code" Type="Notification" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Logs" Member="Logs">
+    <Type Name="Log">
+      <Column Name="HubID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Time" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Action" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Account" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Hub_Information_Log" Member="Hub_Information" ThisKey="HubID" OtherKey="ID" Type="Hub_Information" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Sexual" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="YearOld" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Picture" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Association Name="User_Hub_Information" Member="Hub_Informations" ThisKey="Email" OtherKey="Email" Type="Hub_Information" />
+    </Type>
+  </Table>
+</Database>

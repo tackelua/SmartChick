@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\DarkSoulS\Desktop\API</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="ApplicationInsights.config">
+      <publishTime>03/02/2017 13:54:54</publishTime>
+    </File>
+    <File Include="bin/ApplicationInsights.config">
+      <publishTime>03/02/2017 13:54:54</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
+      <publishTime>11/30/2016 16:07:42</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.DependencyCollector.dll">
+      <publishTime>12/07/2016 11:45:42</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
+      <publishTime>12/07/2016 11:50:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
+      <publishTime>12/06/2016 15:15:48</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Web.dll">
+      <publishTime>12/07/2016 11:49:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.WindowsServer.dll">
+      <publishTime>12/07/2016 11:50:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ApplicationInsights.dll">
+      <publishTime>12/06/2016 15:09:52</publishTime>
+    </File>
+    <File Include="bin/SmartChickAPI.dll">
+      <publishTime>04/05/2017 15:32:41</publishTime>
+    </File>
+    <File Include="NanoFarm.dbml">
+      <publishTime>04/04/2017 14:08:50</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>03/21/2017 15:53:19</publishTime>
+    </File>
+    <File Include="Service1.svc">
+      <publishTime>03/02/2017 13:54:45</publishTime>
+    </File>
+    <File Include="SmartChick.dbml">
+      <publishTime>03/21/2017 12:08:18</publishTime>
+    </File>
+    <File Include="SmartChickImp.svc">
+      <publishTime>03/02/2017 13:55:38</publishTime>
+    </File>
+    <File Include="UPDATE_LOG.txt">
+      <publishTime>04/04/2017 14:20:21</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>03/21/2017 16:03:17</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

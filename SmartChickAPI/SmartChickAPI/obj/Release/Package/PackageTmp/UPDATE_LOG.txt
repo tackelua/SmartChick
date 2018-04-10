@@ -1,0 +1,53 @@
+﻿
+
+
+20170404 v1.0.8
+	- Thêm DateTime vào trong bảng Noti
+	- Sửa lại trong bảng Noti
+	- Thêm noti_content
+
+20170403 v1.0.7
+	- Thêm table Notification
+===============================================================================================================================================================
+20170328 v1.0.6	
+	- Sửa lại trong SelectChickenLibBySID
+	- Sửa lại trong ActionSetting. Thêm Sertilise_Day and _Time
+===============================================================================================================================================================
+20170327 v1.0.5
+	- Sửa trong Current_Care and Chicken_Library từ light_on/off thành light_duration
+	- Thêm 2 cột trong Action_Setting  Light_on_time and Light_off_time
+	- Thêm cột Light_Status trong Action_Setting
+
+===============================================================================================================================================================
+20170325 v1.0.4
+	- Sửa kiểu trong ActionSetting - Feed_Mode  từ string thành bool
+===============================================================================================================================================================
+20170323 v1.0.3
+	- DOING
+	- DONE
+		- Sửa curent care - thêm min max cho temp và humi
+		- Sửa chick lib - Thêm min max cho temp và humi
+		- Đổi vị trí trong Chicken .
+		- Theme TempValue vaf HumiValue trong CurrentCare
+
+===============================================================================================================================================================
+20170322 v1.0.2
+	- DOING
+	- DONE
+		- Sửa kiểu status tại updateCondition của LightLampStatus từ int thành boolean (bị bất đồng bộ giữa 2 status, 1 cái boolean, 1 cái int)
+			- Sửa service theo yêu cầu của anh Thành
+			- Table Chicken : thêm SpicesID x
+			- Table Chicken_Library : sửa theo yêu cầu anh Thành x
+			- Table Curent Care : sửa theo yêu cầu của anh Thành x
+			- Thay TypeID thành SpiecesID
+			- Bỏ LibInoculationLIst, thêm SpeciesID vào Inoculation_list
+			- Sửa trong Inoculation_List : Sửa Time thành Dayold , thêm TypeID
+		- Bỏ hubpassword trong HUbData
+		- Thêm Chicken List table
+		- Thêm get data by species id trong lib
+===============================================================================================================================================================
+20170321 v1.0.1
+	- Thêm password vào UserInfo
+	- Sửa lại ở Action - các status từ int to bit
+v1.0.0
+	- Original from Mr Linh
